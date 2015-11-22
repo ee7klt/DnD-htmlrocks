@@ -1,13 +1,8 @@
-
-
-function handleclick(e) {
-  console.log("button clicked")
+function handleDragStart(e) {
+  this.style.opacity = '0.4';
 }
 
-var el = document.getElementById("a");
-console.log("el = " + el);
-el.addEventListener("click", special, false);
-
-function special() {
-  console.log("I am special");
-}
+var cols = document.querySelectorAll('#columns .column');
+[].forEach.call(cols, function(col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+})
